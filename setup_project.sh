@@ -102,9 +102,9 @@ if [[ "$warning" =~ ^[0-9]+$ ]] && [[ "$failure" =~ ^[0-9]+$ ]]; then
     if (( warning > 0 && warning <= 100 )) && \
        (( failure >= 0 && failure < warning )); then
 
-        sed -i "s/\"warning_threshold\": [0-9]*/\"warning_threshold\": $warning/" "$MAIN_DIR/Helpers/config.json"
-        sed -i "s/\"failure_threshold\": [0-9]*/\"failure_threshold\": $failure/" "$MAIN_DIR/Helpers/config.json"
-
+sed -i "s/\"warning\": [0-9]*/\"warning\": $warning/" "$MAIN_DIR/Helpers/config.json"
+sed -i "s/\"failure\": [0-9]*/\"failure\": $failure/" "$MAIN_DIR/Helpers/config.json"
+        
         echo "[✓] Thresholds updated successfully."
 
     else
